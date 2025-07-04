@@ -104,6 +104,9 @@ class Client extends EventEmitter {
             await this.pupPage.evaluate(ExposeLegacyAuthStore, moduleRaid.toString());
         }
 
+        // Allow some time for session restoration to complete before checking auth state
+        await new Promise(r => setTimeout(r, 1000));
+
         const needAuthentication = await this.pupPage.evaluate(async () => {
             let state = window.AuthStore.AppState.state;
 

@@ -43,7 +43,7 @@ class RemoteAuth extends BaseAuthStrategy {
         this.backupSyncIntervalMs = backupSyncIntervalMs;
         this.dataPath = path.resolve(dataPath || './.wwebjs_auth/');
         this.tempDir = `${this.dataPath}/wwebjs_temp_session_${this.clientId}`;
-        this.requiredDirs = ['Default', 'IndexedDB', 'Local Storage']; /* => Required Files & Dirs in WWebJS to restore session */
+        this.requiredDirs = ['Default', 'IndexedDB', 'Local Storage', 'Session Storage', 'WebStorage', 'databases']; /* => Required Files & Dirs in WWebJS to restore session */
         this.rmMaxRetries = rmMaxRetries ?? 4;
     }
 

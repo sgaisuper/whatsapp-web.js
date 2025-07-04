@@ -544,7 +544,7 @@ class Client extends EventEmitter {
                  */
             this.emit(Events.STATE_CHANGED, state);
 
-            const ACCEPTED_STATES = [WAState.CONNECTED, WAState.OPENING, WAState.PAIRING, WAState.TIMEOUT];
+            const ACCEPTED_STATES = [WAState.CONNECTED, WAState.OPENING, WAState.PAIRING, WAState.TIMEOUT, WAState.UNPAIRED, WAState.UNPAIRED_IDLE];
 
             if (this.options.takeoverOnConflict) {
                 ACCEPTED_STATES.push(WAState.CONFLICT);
